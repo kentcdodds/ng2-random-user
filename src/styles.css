@@ -1,0 +1,75 @@
+/* body */
+body {
+  font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+/* Main */
+main {
+  width: 500px;
+  margin: 60px auto;
+}
+
+main .new-user-button {
+  display: block;
+  text-align: center;
+}
+
+
+/* PersonCard */
+.person-card {
+  display: block;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 10px 10px 30px 10px;
+  margin: 18px;
+  border-radius: 2px;
+}
+.person-card .person-avatar-container {
+  text-align: center;
+}
+.person-card .person-avatar-container img {
+  height: 128px;
+  width: 128px;
+  cursor: pointer;
+}
+
+
+/* ru-button */
+.ru-button {
+  box-shadow: none;
+  -webkit-transition-property: background;
+  transition-property: background;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  text-shadow: none;
+  border: none;
+
+  display: inline-block;
+  vertical-align: middle;
+  height: 32px;
+  line-height: 30px;
+  padding: 0 25px;
+  font-weight: 300;
+  font-size: 16px;
+  font-family: "Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+  color: #666;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.ru-button:hover,
+.ru-button:active {
+  cursor: pointer;
+}
+
+.ru-button.\--primary {
+  background-color: #19A2C9;
+  color: white;
+}
+
+.ru-button.\--primary:hover,
+.ru-button.\--primary:active {
+  background-color: #00b5e5;
+}
+
