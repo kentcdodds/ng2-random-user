@@ -5,7 +5,7 @@ body {
 
 /* Main */
 main {
-  width: 500px;
+  width: 700px;
   margin: 60px auto;
 }
 
@@ -20,10 +20,15 @@ main .new-user-button {
   display: block;
   box-sizing: border-box;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  padding: 10px 10px 30px 10px;
+  padding: 20px 10px;
   margin: 18px;
   border-radius: 2px;
 }
+.person-card .no-person,
+.person-card .spinner-container {
+  text-align: center;
+}
+
 .person-card .person-avatar-container {
   text-align: center;
 }
@@ -31,6 +36,21 @@ main .new-user-button {
   height: 128px;
   width: 128px;
   cursor: pointer;
+  border-radius: 50%;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.person-card .person-properties {
+  margin-top: 20px;
+  font-size: 1.2em;
 }
 
 

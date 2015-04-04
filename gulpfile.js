@@ -20,7 +20,9 @@ var PATHS = {
     'node_modules/angular2/node_modules/zone.js/long-stack-trace-zone.js',
     'node_modules/angular2/node_modules/rx/dist/rx.all.js',
     'node_modules/axios/dist/axios.js',
-    'node_modules/axios/dist/axios.map'
+    'node_modules/axios/dist/axios.map',
+    'node_modules/font-awesome/**/*.*',
+    'node_modules/moment/moment.js'
   ]
 };
 
