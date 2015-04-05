@@ -1,5 +1,4 @@
 import {Component, Template, For, If} from 'angular2/angular2';
-import {Spinner} from 'spinner';
 import {bind} from 'angular2/di';
 
 @Component({
@@ -16,7 +15,7 @@ import {bind} from 'angular2/di';
   inline: `
     <div class="person-card">
       <div *if="loading" class="spinner-container">
-        <spinner></spinner>
+        <i class="fa fa-refresh fa-2x fa-spin"></i>
       </div>
       <div *if="!loading">
         <div *if="!user" class="no-person">
@@ -36,7 +35,7 @@ import {bind} from 'angular2/di';
       </div>
     </div>
   `,
-  directives: [If, For, Spinner]
+  directives: [If, For]
 })
 export class PersonCard {
   constructor(moment:moment) {
