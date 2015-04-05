@@ -1,8 +1,12 @@
 import {Component, Template, bootstrap} from 'angular2/angular2';
 import {PersonCard} from 'person-card';
+import {RandomUser} from 'RandomUser';
 
 @Component({
-  selector: 'main'
+  selector: 'main',
+  services: [
+    RandomUser
+  ]
 })
 @Template({
   directives: [PersonCard],
@@ -19,7 +23,7 @@ import {PersonCard} from 'person-card';
   `
 })
 class Main {
-  constructor() {
+  constructor(randomUser:RandomUser) {
     this.user = {
       name: {
         first: 'Fred',
@@ -31,20 +35,12 @@ class Main {
         medium: 'fred.png'
       }
     };
+
+    this.getRandomUser = randomUser.getUser;
   }
 
   getNewUser() {
-    this.user = {
-      name: {
-        first: 'Ethel',
-        last: 'Mertz'
-      },
-      username: 'iloveethel',
-      email: 'maegirl123@aol.com',
-      picture: {
-        medium: 'ethel.png'
-      }
-    };
+    this.user = this.getRandomUser();
   }
 }
 
