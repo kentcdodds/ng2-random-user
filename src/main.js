@@ -8,11 +8,21 @@ import {PersonCard} from 'person-card';
   directives: [PersonCard],
   inline: `
     <div>
-      <person-card></person-card>
+      <person-card [person]="person"></person-card>
     </div>
   `
 })
 class Main {
+  constructor() {
+    this.person = {
+      name: {
+        first: 'Fred',
+        last: 'Mertz'
+      },
+      username: 'TheFredMertz',
+      email: 'freddie@aol.com'
+    };
+  }
 }
 
 bootstrap(Main);

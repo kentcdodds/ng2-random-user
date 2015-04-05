@@ -1,7 +1,10 @@
 import {Component, Template, For} from 'angular2/angular2';
 
 @Component({
-  selector: 'person-card'
+  selector: 'person-card',
+  bind: {
+    person: 'person'
+  }
 })
 @Template({
   directives: [For],
@@ -20,15 +23,6 @@ import {Component, Template, For} from 'angular2/angular2';
 })
 export class PersonCard {
   constructor() {
-    this.person = {
-      name: {
-        first: 'Fred',
-        last: 'Mertz'
-      },
-      username: 'TheFredMertz',
-      email: 'freddie@aol.com'
-    };
-
     this.properties = [
       {
         title: 'Name',
