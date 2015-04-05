@@ -8,8 +8,7 @@ var traceur = require('gulp-traceur');
 var PATHS = {
   src: {
     js: 'src/**/*.js',
-    html: 'src/**/*.html',
-    css: 'src/**/*.css'
+    other: 'src/**/*.{html,css,png}'
   },
   lib: [
     'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
@@ -45,8 +44,8 @@ gulp.task('js', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('html', function() {
-  return gulp.src(PATHS.src.html)
+gulp.task('other', function() {
+  return gulp.src(PATHS.src.other)
     .pipe(gulp.dest('dist'));
 });
 
@@ -85,7 +84,7 @@ gulp.task('play', ['default'], function() {
 
   var port = 9000, app;
 
-  gulp.watch(PATHS.src.html, ['html']);
+  gulp.watch(PATHS.src.other, ['other']);
   gulp.watch(PATHS.src.js, ['js']);
   gulp.watch(PATHS.src.css, ['css']);
 
@@ -95,4 +94,4 @@ gulp.task('play', ['default'], function() {
   });
 });
 
-gulp.task('default', ['js', 'html', 'css', 'libs']);
+gulp.task('default', ['js', 'other', 'libs']);
