@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');
 var rename = require('gulp-rename');
 var traceur = require('gulp-traceur');
+var ghPages = require('gulp-gh-pages');
 
 var PATHS = {
   src: {
@@ -59,6 +60,11 @@ gulp.task('libs', ['angular2'], function() {
     .pipe(gulp.dest('dist/lib'));
 });
 
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
 gulp.task('angular2', function() {
 
   //transpile & concat
@@ -94,4 +100,7 @@ gulp.task('play', ['default'], function() {
   });
 });
 
+
 gulp.task('default', ['js', 'other', 'libs']);
+gulp.task('build', ['js', 'other', 'libs']);
+gulp.task('gh-pages', ['build', 'deploy']);
