@@ -1,27 +1,14 @@
 import {Component, Template, bootstrap} from 'angular2/angular2';
+import {PersonCard} from 'person-card';
 
 @Component({
   selector: 'main'
 })
 @Template({
+  directives: [PersonCard],
   inline: `
     <div>
-      <div class="person-card">
-        <div class="person-avatar-container">
-          <img src="fred.png"/>
-        </div>
-        <div class="person-properties">
-          <div>
-            <strong>Name: </strong> Fred Mertz
-          </div>
-          <div>
-            <strong>Username: </strong> TheFredMertz
-          </div>
-          <div>
-            <strong>Email: </strong> freddie@aol.com
-          </div>
-        </div>
-      </div>
+      <person-card></person-card>
     </div>
   `
 })
