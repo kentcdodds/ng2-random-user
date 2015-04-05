@@ -50,11 +50,6 @@ gulp.task('other', function() {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('css', function() {
-  return gulp.src(PATHS.src.css)
-    .pipe(gulp.dest('dist'));
-});
-
 gulp.task('libs', ['angular2'], function() {
   return gulp.src(PATHS.lib)
     .pipe(gulp.dest('dist/lib'));
@@ -92,7 +87,6 @@ gulp.task('play', ['default'], function() {
 
   gulp.watch(PATHS.src.other, ['other']);
   gulp.watch(PATHS.src.js, ['js']);
-  gulp.watch(PATHS.src.css, ['css']);
 
   app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
   http.createServer(app).listen(port, function() {
