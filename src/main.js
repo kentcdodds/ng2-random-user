@@ -40,7 +40,9 @@ class Main {
   }
 
   getNewUser() {
-    this.user = this.getRandomUser();
+    this.getRandomUser().then(user => {
+      this.user = user;
+    });
   }
 }
 

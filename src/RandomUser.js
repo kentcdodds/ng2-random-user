@@ -1,15 +1,6 @@
 export class RandomUser {
   getUser() {
-    return {
-      name: {
-        first: 'Ethel',
-        last: 'Mertz'
-      },
-      username: 'iloveethel',
-      email: 'maegirl123@aol.com',
-      picture: {
-        medium: 'ethel.png'
-      }
-    };
+    var url = 'http://api.randomuser.me';
+    return axios.get(url).then(response => response.data.results[0].user);
   }
 }
