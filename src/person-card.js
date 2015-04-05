@@ -11,7 +11,7 @@ import {Component, Template, For} from 'angular2/angular2';
   inline: `
     <div class="person-card">
       <div class="person-avatar-container">
-        <img src="fred.png"/>
+        <img [src]="person.picture.medium"/>
       </div>
       <div class="person-properties">
         <div *for="#prop of properties">

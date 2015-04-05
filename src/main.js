@@ -20,7 +20,10 @@ class Main {
         last: 'Mertz'
       },
       username: 'TheFredMertz',
-      email: 'freddie@aol.com'
+      email: 'freddie@aol.com',
+      picture: {
+        medium: 'fred.png'
+      }
     };
   }
 }
