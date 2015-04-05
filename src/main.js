@@ -1,7 +1,6 @@
 import {Component, Template, bootstrap, If} from 'angular2/angular2';
 import {PersonCard} from 'person-card';
 import {RandomUser} from 'RandomUser';
-import {Alert} from 'alert';
 
 @Component({
   selector: 'main',

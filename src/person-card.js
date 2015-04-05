@@ -74,13 +74,5 @@ export class PersonCard {
         return word.substr(0, 1).toUpperCase() + word.substr(1);
       }).join(' ');
     }
-
-    function formatDate(d) {
-
-    }
-  }
-
-  toJson(obj) {
-    return JSON.stringify(obj, null, 2);
   }
 }
