@@ -1,21 +1,32 @@
-import {Component, Template, For} from 'angular2/angular2';
+import {Component, Template, For, If} from 'angular2/angular2';
 
 @Component({
   selector: 'person-card',
   bind: {
-    person: 'person'
+    person: 'person',
+    loading: 'loading'
   }
 })
 @Template({
-  directives: [For],
+  directives: [For, If],
   inline: `
     <div class="person-card">
-      <div class="person-avatar-container">
-        <img [src]="person.picture.medium"/>
+      <div [hidden]="!loading" class="spinner-container">
+        <i class="fa fa-refresh fa-2x fa-spin"></i>
       </div>
-      <div class="person-properties">
-        <div *for="#prop of properties">
-          <strong>{{prop.title}}: </strong> {{prop.getVal(person)}}
+      <div [hidden]="loading">
+        <div *if="!person" class="no-person">
+          Please select a user
+        </div>
+        <div *if="person">
+          <div class="person-avatar-container">
+            <img [src]="person.picture.medium"/>
+          </div>
+          <div class="person-properties">
+            <div *for="#prop of properties">
+              <strong>{{prop.title}}: </strong> {{prop.getVal(person)}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
