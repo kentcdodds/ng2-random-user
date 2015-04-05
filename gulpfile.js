@@ -9,7 +9,8 @@ var PATHS = {
   src: {
     js: 'src/**/*.js',
     html: 'src/**/*.html',
-    css: 'src/**/*.css'
+    css: 'src/**/*.css',
+    png: 'src/**/*.png'
   },
   lib: [
     'node_modules/gulp-traceur/node_modules/traceur/bin/traceur-runtime.js',
@@ -55,6 +56,11 @@ gulp.task('css', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('png', function() {
+  return gulp.src(PATHS.src.png)
+    .pipe(gulp.dest('dist'));
+});
+
 gulp.task('libs', ['angular2'], function() {
   return gulp.src(PATHS.lib)
     .pipe(gulp.dest('dist/lib'));
@@ -88,6 +94,7 @@ gulp.task('play', ['default'], function() {
   gulp.watch(PATHS.src.html, ['html']);
   gulp.watch(PATHS.src.js, ['js']);
   gulp.watch(PATHS.src.css, ['css']);
+  gulp.watch(PATHS.src.png, ['png']);
 
   app = connect().use(serveStatic(__dirname + '/dist'));  // serve everything that is static
   http.createServer(app).listen(port, function() {
@@ -95,4 +102,4 @@ gulp.task('play', ['default'], function() {
   });
 });
 
-gulp.task('default', ['js', 'html', 'css', 'libs']);
+gulp.task('default', ['js', 'html', 'css', 'png', 'libs']);
