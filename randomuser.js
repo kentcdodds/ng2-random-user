@@ -4,17 +4,15 @@ var faker = require('faker');
 var port = process.env.PORT || 3000;
 var ipAddress = process.env.IP_ADDRESS || '127.0.0.1';
 
-console.log(faker);
-
 http.createServer(function(req, res) {
-  wait();
+  wait(500);
   sendJsonResponse(res, getRandomUserApiUser());
 }).listen(port, ipAddress);
 console.log('Server running at ' + ipAddress + ':' + port);
 
-function wait() {
+function wait(ms) {
   var start = new Date();
-  while (new Date() - start < 1000) {
+  while (new Date() - start < ms) {
   }
 }
 
