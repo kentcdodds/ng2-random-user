@@ -1,14 +1,14 @@
 import {Component, Template, bootstrap} from 'angular2/angular2';
-import {PersonCard} from 'person-card';
+import {UserCard} from 'user-card';
 
 @Component({
   selector: 'main'
 })
 @Template({
-  directives: [PersonCard],
+  directives: [UserCard],
   inline: `
     <div>
-      <person-card></person-card>
+      <user-card></user-card>
     </div>
   `
 })

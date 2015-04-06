@@ -16,8 +16,8 @@ main .new-user-button {
 }
 
 
-/* PersonCard */
-.person-card {
+/* UserCard */
+.user-card {
   display: block;
   box-sizing: border-box;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -25,15 +25,15 @@ main .new-user-button {
   margin: 18px;
   border-radius: 2px;
 }
-.person-card .no-person,
-.person-card .spinner-container {
+.user-card .no-user,
+.user-card .spinner-container {
   text-align: center;
 }
 
-.person-card .person-avatar-container {
+.user-card .user-avatar-container {
   text-align: center;
 }
-.person-card .person-avatar-container img {
+.user-card .user-avatar-container img {
   height: 128px;
   width: 128px;
   border-radius: 50%;
@@ -48,7 +48,7 @@ main .new-user-button {
   vertical-align: middle;
 }
 
-.person-card .person-properties {
+.user-card .user-properties {
   margin-top: 20px;
   font-size: 1.2em;
 }
