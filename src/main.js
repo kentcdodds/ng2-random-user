@@ -25,15 +25,11 @@ export class App {
   }
 
   getRandomUser() {
-    this.toggleLoading(true);
+    this.loading = true;
     this.getUser().then(user => {
       this.user = user;
-      this.toggleLoading(false);
-    }).catch(this.toggleLoading.bind(this, false));
-  }
-
-  toggleLoading(state) {
-    this.loading = typeof state === 'boolean' ? state : !this.loading;
+      this.loading = false;
+    }).catch(() => this.loading = false);
   }
 }
 
