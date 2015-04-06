@@ -1,5 +1,5 @@
 import {Component, Template, bootstrap, If} from 'angular2/angular2';
-import {PersonCard} from 'person-card';
+import {UserCard} from 'user-card';
 import {RandomUser} from 'RandomUser';
 
 @Component({
@@ -7,6 +7,7 @@ import {RandomUser} from 'RandomUser';
   services: [RandomUser]
 })
 @Template({
+  directives: [UserCard],
   inline: `
     <div class="new-user-button">
       <button class="ru-button --primary" autofocus (click)="getRandomUser()">
@@ -14,9 +15,8 @@ import {RandomUser} from 'RandomUser';
         Get New User
       </button>
     </div>
-    <person-card [user]="user" [loading]="loading"></person-card>
-  `,
-  directives: [PersonCard]
+    <user-card [user]="user" [loading]="loading"></user-card>
+  `
 })
 export class App {
   constructor(randomUser:RandomUser) {

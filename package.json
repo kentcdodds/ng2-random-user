@@ -24,7 +24,8 @@
     "gulp-traceur": "0.17.*",
     "open": "0.0.5",
     "serve-static": "~1.8.1",
-    "through2": "~0.6.3"
+    "through2": "~0.6.3",
+    "faker": "2.1.2"
   },
   "dependencies": {
     "angular2": "2.0.0-alpha.18",

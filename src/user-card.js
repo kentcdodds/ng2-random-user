@@ -2,7 +2,7 @@ import {Component, Template, For, If} from 'angular2/angular2';
 import {bind} from 'angular2/di';
 
 @Component({
-  selector: 'person-card',
+  selector: 'user-card',
   bind: {
     user: 'user',
     loading: 'loading'
@@ -13,20 +13,20 @@ import {bind} from 'angular2/di';
 })
 @Template({
   inline: `
-    <div class="person-card">
+    <div class="user-card">
       <div *if="loading" class="spinner-container">
         <i class="fa fa-refresh fa-2x fa-spin"></i>
       </div>
       <div *if="!loading">
-        <div *if="!user" class="no-person">
+        <div *if="!user" class="no-user">
           <small>please select a user</small>
         </div>
         <div *if="user">
-          <div class="person-avatar-container">
+          <div class="user-avatar-container">
             <img [src]="user.picture.medium" alt="User Avatar" />
           </div>
 
-          <div class="person-properties">
+          <div class="user-properties">
             <div *for="var prop of properties">
               <strong>{{prop.title}}:</strong> {{prop.getVal(user)}}
             </div>
@@ -37,7 +37,7 @@ import {bind} from 'angular2/di';
   `,
   directives: [If, For]
 })
-export class PersonCard {
+export class UserCard {
   constructor(moment:moment) {
     this.properties = [
       {
