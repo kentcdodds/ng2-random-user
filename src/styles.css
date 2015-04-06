@@ -36,7 +36,6 @@ main .new-user-button {
 .person-card .person-avatar-container img {
   height: 128px;
   width: 128px;
-  cursor: pointer;
   border-radius: 50%;
   padding: 4px;
   line-height: 1.42857143;
