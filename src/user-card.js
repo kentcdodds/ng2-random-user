@@ -10,7 +10,7 @@ import {Component, Template} from 'angular2/angular2';
   inline: `
     <div class="user-card">
       <div class="user-avatar-container">
-        <img src="fred.png" alt="User Avatar"/>
+        <img [src]="user.picture.medium" alt="User Avatar"/>
       </div>
       <div class="user-properties">
         <div>

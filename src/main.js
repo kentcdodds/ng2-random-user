@@ -7,7 +7,15 @@ import {UserCard} from 'user-card';
 @Template({
   directives: [UserCard],
   inline: `
-    <user-card [user]="user"></user-card>
+    <div class="new-user-button">
+      <button class="ru-button --primary" autofocus (click)="getNewUser()">
+        <i class="fa fa-user"></i>
+        Get New User
+      </button>
+    </div>
+    <div>
+      <user-card [user]="user"></user-card>
+    </div>
   `
 })
 class Main {
@@ -18,7 +26,24 @@ class Main {
         last: 'Mertz'
       },
       username: 'TheFredMertz',
-      email: 'freddie@aol.com'
+      email: 'freddie@aol.com',
+      picture: {
+        medium: 'fred.png'
+      }
+    };
+  }
+
+  getNewUser() {
+    this.user = {
+      name: {
+        first: 'Ethel',
+        last: 'Mertz'
+      },
+      username: 'maegrl',
+      email: 'maebebaby@aol.com',
+      picture: {
+        medium: 'ethel.png'
+      }
     };
   }
 }
