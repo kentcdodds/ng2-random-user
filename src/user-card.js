@@ -1,7 +1,10 @@
 import {Component, Template} from 'angular2/angular2';
 
 @Component({
-  selector: 'user-card'
+  selector: 'user-card',
+  bind: {
+    user: 'user'
+  }
 })
 @Template({
   inline: `
@@ -25,13 +28,6 @@ import {Component, Template} from 'angular2/angular2';
 })
 export class UserCard {
   constructor() {
-    this.user = {
-      name: {
-        first: 'Fred',
-        last: 'Mertz'
-      },
-      username: 'TheFredMertz',
-      email: 'freddie@aol.com'
-    };
+
   }
 }
