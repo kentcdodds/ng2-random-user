@@ -24,6 +24,20 @@ class Main {
         medium: 'fred.png'
       }
     };
+
+    setTimeout(() => {
+      this.user = {
+        name: {
+          first: 'Ethel',
+          last: 'Mertz'
+        },
+        username: 'maegrl',
+        email: 'maebebaby@aol.com',
+        picture: {
+          medium: 'ethel.png'
+        }
+      };
+    }, 1000);
   }
 }
 
