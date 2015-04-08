@@ -55,7 +55,7 @@
   "_id": "font-awesome@4.3.0",
   "scripts": {},
   "_shasum": "44eeb790cdf986642786f33fce784764f1841c40",
-  "_from": "font-awesome@*",
+  "_from": "font-awesome@>=4.3.0 <5.0.0",
   "_npmVersion": "1.4.28",
   "_npmUser": {
     "name": "juliankrispel",
@@ -72,5 +72,6 @@
     "tarball": "http://registry.npmjs.org/font-awesome/-/font-awesome-4.3.0.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/font-awesome/-/font-awesome-4.3.0.tgz"
+  "_resolved": "https://registry.npmjs.org/font-awesome/-/font-awesome-4.3.0.tgz",
+  "readme": "ERROR: No README data found!"
 }
