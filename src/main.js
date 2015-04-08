@@ -8,6 +8,12 @@ import {UserCard} from 'user-card';
 @Template({
   directives: [UserCard],
   inline: `
+    <div class="new-user-button">
+      <button class="ru-button --primary" autofocus (click)="getNewUser()">
+        <i class="fa fa-user"></i>
+        Get New User
+      </button>
+    </div>
     <user-card [user]="user"></user-card>
   `
 })
@@ -24,20 +30,20 @@ class Main {
         medium: 'fred.png'
       }
     };
+  }
 
-    setTimeout(() => {
-      this.user = {
-        name: {
-          first: 'Ethel',
-          last: 'Mertz'
-        },
-        username: 'maegrl',
-        email: 'maebebaby@aol.com',
-        picture: {
-          medium: 'ethel.png'
-        }
-      };
-    }, 1000);
+  getNewUser() {
+    this.user = {
+      name: {
+        first: 'Ethel',
+        last: 'Mertz'
+      },
+      username: 'maegrl',
+      email: 'maebebaby@aol.com',
+      picture: {
+        medium: 'ethel.png'
+      }
+    };
   }
 }
 
