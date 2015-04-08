@@ -18,28 +18,21 @@ import {RandomUser} from 'RandomUser';
       </button>
     </div>
     <div>
-      <user-card [user]="user"></user-card>
+      <user-card [user]="user" [loading]="loading"></user-card>
     </div>
   `
 })
 class Main {
   constructor(randomUser:RandomUser) {
-    this.user = {
-      name: {
-        first: 'Fred',
-        last: 'Mertz'
-      },
-      username: 'TheFredMertz',
-      email: 'freddie@aol.com',
-      picture: {
-        medium: 'fred.png'
-      }
-    };
     this.getUser = randomUser.getUser;
   }
 
   getNewUser() {
-    this.getUser().then(user => this.user = user);
+    this.loading = true;
+    this.getUser().then(user => {
+      this.loading = false;
+      this.user = user;
+    });
   }
 }
 
