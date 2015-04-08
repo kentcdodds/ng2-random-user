@@ -1,11 +1,14 @@
 import {Component, Template, bootstrap} from 'angular2/angular2';
+import {UserCard} from 'user-card';
+
 
 @Component({
   selector: 'main'
 })
 @Template({
+  directives: [UserCard],
   inline: `
-    <div>Hello Philly ETE</div>
+    <user-card></user-card>
   `
 })
 class Main {
