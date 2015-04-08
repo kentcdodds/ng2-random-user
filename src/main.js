@@ -16,7 +16,11 @@ import {RandomUser} from 'RandomUser';
         Get New User
       </button>
     </div>
-    <user-card [user]="user"></user-card>
+    <user-card [user]="user" [loading]="loading">
+      <div loading>
+        <i class="fa fa-2x fa-refresh fa-spin"></i>
+      </div>
+    </user-card>
   `
 })
 class Main {
@@ -36,7 +40,11 @@ class Main {
   }
 
   getNewUser() {
-    this.getRandomUser().then(user => this.user = user);
+    this.loading = true;
+    this.getRandomUser().then(user => {
+      this.loading = false;
+      this.user = user;
+    }, () => this.loading = false);
   }
 }
 
