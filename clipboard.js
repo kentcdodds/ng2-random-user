@@ -26,7 +26,10 @@ var fred = {
     last: 'Mertz'
   },
   username: 'TheFredMertz',
-  email: 'freddie@aol.com'
+  email: 'freddie@aol.com',
+  picture: {
+    medium: 'fred.png'
+  }
 };
 
 var ethel = {
@@ -35,7 +38,10 @@ var ethel = {
     last: 'Mertz'
   },
   username: 'maegrl',
-  email: 'maebebaby@aol.com'
+  email: 'maebebaby@aol.com',
+  picture: {
+    medium: 'ethel.png'
+  }
 };
 
 // Random User API URL
