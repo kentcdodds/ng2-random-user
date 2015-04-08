@@ -8,10 +8,23 @@ import {UserCard} from 'user-card';
 @Template({
   directives: [UserCard],
   inline: `
-    <user-card></user-card>
+    <user-card [user]="user"></user-card>
   `
 })
 class Main {
+  constructor() {
+    this.user = {
+      name: {
+        first: 'Fred',
+        last: 'Mertz'
+      },
+      username: 'TheFredMertz',
+      email: 'freddie@aol.com',
+      picture: {
+        medium: 'fred.png'
+      }
+    };
+  }
 }
 
 bootstrap(Main);
