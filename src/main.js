@@ -13,30 +13,23 @@ import {RandomUser} from 'RandomUser';
     <div class="new-user-button">
       <button class="ru-button --primary" autofocus (click)="getNewUser()">
         <i class="fa fa-user"></i>
-        Get New User
+        {{buttonText}}
       </button>
     </div>
     <user-card [user]="user" [loading]="loading">
       <div loading>
         <i class="fa fa-2x fa-refresh fa-spin"></i>
       </div>
+      <div no-user>
+        <small>please click "{{buttonText}}"</small>
+      </div>
     </user-card>
   `
 })
 class Main {
   constructor(randomUser:RandomUser) {
-    this.user = {
-      name: {
-        first: 'Fred',
-        last: 'Mertz'
-      },
-      username: 'TheFredMertz',
-      email: 'freddie@aol.com',
-      picture: {
-        medium: 'fred.png'
-      }
-    };
     this.getRandomUser = randomUser.getUser;
+    this.buttonText = 'Get New User';
   }
 
   getNewUser() {

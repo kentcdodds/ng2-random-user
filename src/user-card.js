@@ -1,4 +1,4 @@
-import {Component, Template} from 'angular2/angular2';
+import {Component, Template, If, For} from 'angular2/angular2';
 
 @Component({
   selector: 'user-card',
@@ -8,24 +8,24 @@ import {Component, Template} from 'angular2/angular2';
   }
 })
 @Template({
+  directives: [If, For],
   inline: `
     <div class="user-card">
       <div [hidden]="!loading">
         <content select="[loading]"></content>
       </div>
       <div [hidden]="loading">
-        <div class="user-avatar-container">
-          <img [src]="user.picture.medium" alt="User Avatar"/>
+        <div [hidden]="user">
+          <content select="[no-user]"></content>
         </div>
-        <div class="user-properties">
-          <div>
-            <strong>Name:</strong> {{user.name.first}} {{user.name.last}}
+        <div *if="user">
+          <div class="user-avatar-container">
+            <img [src]="user.picture.medium" alt="User Avatar"/>
           </div>
-          <div>
-            <strong>Username:</strong> {{user.username}}
-          </div>
-          <div>
-            <strong>Email:</strong> {{user.email}}
+          <div class="user-properties">
+            <div *for="#prop of properties">
+              <strong>{{prop.title}}:</strong> {{prop.getVal(user)}}
+            </div>
           </div>
         </div>
       </div>
@@ -34,5 +34,41 @@ import {Component, Template} from 'angular2/angular2';
 })
 export class UserCard {
   constructor() {
+    this.properties = [
+      {
+        title: 'Name',
+        getVal: user => upperWords(`${user.name.first} ${user.name.last}`)
+      },
+      {
+        title: 'Username',
+        getVal: user => user.username
+      },
+      {
+        title: 'Email',
+        getVal: user => user.email
+      },
+      {
+        title: 'Address',
+        getVal: user => (
+          upperWords(`${user.location.street}, ${user.location.city}, ${user.location.state} ${user.location.zip}`)
+        )
+      },
+      {
+        title: 'Birthday',
+        getVal: user => moment(user.dob * 1000).format('MMMM Do, YYYY')
+      },
+      {
+        title: 'Cell Phone Number',
+        getVal: user => user.cell
+      }
+    ];
+
+// Function to make the names/addresses be upper case
+// use only if there's time...
+    function upperWords(string) {
+      return string.split(' ').map(word => {
+        return word.substr(0, 1).toUpperCase() + word.substr(1);
+      }).join(' ');
+    }
   }
 }
