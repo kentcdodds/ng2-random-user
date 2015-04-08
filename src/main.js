@@ -1,36 +1,49 @@
-import {Component, Template, bootstrap, If} from 'angular2/angular2';
+import {Component, Template, bootstrap} from 'angular2/angular2';
 import {UserCard} from 'user-card';
 import {RandomUser} from 'RandomUser';
 
 @Component({
   selector: 'main',
-  services: [RandomUser]
+  services: [
+    RandomUser
+  ]
 })
 @Template({
   directives: [UserCard],
   inline: `
-    <div class="new-user-button">
-      <button class="ru-button --primary" autofocus (click)="getRandomUser()">
-        <i class="fa fa-user"></i>
-        Get New User
-      </button>
+    <div>
+      <div class="new-user-button">
+        <button class="ru-button --primary" autofocus (click)="getNewUser()">
+          <i class="fa fa-user"></i> Get New User
+        </button>
+      </div>
+      <user-card [user]="user" [loading]="loading"></user-card>
     </div>
-    <user-card [user]="user" [loading]="loading"></user-card>
   `
 })
-export class App {
+class Main {
   constructor(randomUser:RandomUser) {
-    this.getUser = randomUser.getUser;
-    this.getRandomUser();
+    this.getRandomUser = randomUser.getUser;
+    this.user = {
+      name: {
+        first: 'Ethel',
+        last: 'Mertz'
+      },
+      username: 'maegrl',
+      email: 'maebebaby@aol.com',
+      picture: {
+        medium: 'ethel.png'
+      }
+    };
   }
 
-  getRandomUser() {
+  getNewUser() {
     this.loading = true;
-    this.getUser().then(user => {
-      this.user = user;
+    this.getRandomUser().then(user => {
       this.loading = false;
-    }).catch(() => this.loading = false);
+      this.user = user;
+    }, () => this.loading = false);
   }
 }
 
-bootstrap(App);
+bootstrap(Main);

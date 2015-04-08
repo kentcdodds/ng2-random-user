@@ -1,13 +1,35 @@
 // This is just stuff to copy/paste during the presentation
 // because nobody wants to watch someone type out data...
 
+var basicTemplate = `
+    <div class="user-card">
+      <div class="user-avatar-container">
+        <img src="fred.png" alt="User Avatar"/>
+      </div>
+      <div class="user-properties">
+        <div>
+          <strong>Name:</strong> Fred Mertz
+        </div>
+        <div>
+          <strong>Username:</strong> TheFredMertz
+        </div>
+        <div>
+          <strong>Email:</strong> freddie@aol.com
+        </div>
+      </div>
+    </div>
+  `;
+
 var fred = {
   name: {
     first: 'Fred',
     last: 'Mertz'
   },
   username: 'TheFredMertz',
-  email: 'freddie@aol.com'
+  email: 'freddie@aol.com',
+  picture: {
+    medium: 'fred.png'
+  }
 };
 
 var ethel = {
@@ -16,7 +38,10 @@ var ethel = {
     last: 'Mertz'
   },
   username: 'maegrl',
-  email: 'maebebaby@aol.com'
+  email: 'maebebaby@aol.com',
+  picture: {
+    medium: 'ethel.png'
+  }
 };
 
 // Random User API URL
