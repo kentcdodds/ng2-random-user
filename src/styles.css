@@ -15,6 +15,10 @@ main .new-user-button {
   text-align: center;
 }
 
+main [no-user],
+main [loading] {
+  text-align: center;
+}
 
 /* UserCard */
 .user-card {
@@ -24,10 +28,6 @@ main .new-user-button {
   padding: 20px 10px;
   margin: 18px;
   border-radius: 2px;
-}
-.user-card .no-user,
-.user-card .spinner-container {
-  text-align: center;
 }
 
 .user-card .user-avatar-container {

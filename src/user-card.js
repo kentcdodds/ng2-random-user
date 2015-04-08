@@ -14,12 +14,12 @@ import {bind} from 'angular2/di';
 @Template({
   inline: `
     <div class="user-card">
-      <div *if="loading" class="spinner-container">
-        <i class="fa fa-refresh fa-2x fa-spin"></i>
+      <div [hidden]="!loading">
+        <content select="[loading]"></content>
       </div>
-      <div *if="!loading">
-        <div *if="!user" class="no-user">
-          <small>please select a user</small>
+      <div [hidden]="loading">
+        <div [hidden]="user" class="no-user">
+          <content select="[no-user]"></content>
         </div>
         <div *if="user">
           <div class="user-avatar-container">
@@ -27,7 +27,7 @@ import {bind} from 'angular2/di';
           </div>
 
           <div class="user-properties">
-            <div *for="var prop of properties">
+            <div *for="#prop of properties">
               <strong>{{prop.title}}:</strong> {{prop.getVal(user)}}
             </div>
           </div>

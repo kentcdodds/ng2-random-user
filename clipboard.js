@@ -27,13 +27,6 @@ var url = 'http://localhost:3000';
 
 
 
-// Function to make the names/addresses be upper case
-// use only if there's time...
-function upperWords(string) {
-  return string.split(' ').map(word => {
-    return word.substr(0, 1).toUpperCase() + word.substr(1);
-  }).join(' ');
-}
 
 
 // copy this only if you're running out of time...
@@ -65,3 +58,12 @@ this.properties = [
     getVal: user => user.cell
   }
 ];
+
+// Function to make the names/addresses be upper case
+// use only if there's time...
+function upperWords(string) {
+  return string.split(' ').map(word => {
+    return word.substr(0, 1).toUpperCase() + word.substr(1);
+  }).join(' ');
+}
+
