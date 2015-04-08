@@ -5,9 +5,36 @@ import {Component, Template} from 'angular2/angular2';
 })
 @Template({
   inline: `
-    <div class="">
+    <div class="user-card">
+      <div class="user-avatar-container">
+        <img [src]="user.picture.medium" alt="User Avatar"/>
+      </div>
+      <div class="user-properties">
+        <div>
+          <strong>Name:</strong> {{user.name.first}} {{user.name.last}}
+        </div>
+        <div>
+          <strong>Username:</strong> {{user.username}}
+        </div>
+        <div>
+          <strong>Email:</strong> {{user.email}}
+        </div>
+      </div>
     </div>
   `
 })
 export class UserCard {
+  constructor() {
+    this.user = {
+      name: {
+        first: 'Fred',
+        last: 'Mertz'
+      },
+      username: 'TheFredMertz',
+      email: 'freddie@aol.com',
+      picture: {
+        medium: 'fred.png'
+      }
+    };
+  }
 }
