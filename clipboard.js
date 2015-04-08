@@ -46,7 +46,7 @@ var ethel = {
 
 var buttonTemplate = `
     <div class="new-user-button">
-      <button class="ru-button --primary">
+      <button class="ru-button --primary" autofocus>
         <i class="fa fa-user"></i>
         Get New User
       </button>
