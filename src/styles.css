@@ -15,8 +15,8 @@ main .new-user-button {
   text-align: center;
 }
 
-main .no-user,
-main .spinner-container {
+main [no-user],
+main [loading] {
   text-align: center;
 }
 
