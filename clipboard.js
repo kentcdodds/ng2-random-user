@@ -44,6 +44,15 @@ var ethel = {
   }
 };
 
+var buttonTemplate = `
+    <div class="new-user-button">
+      <button class="ru-button --primary">
+        <i class="fa fa-user"></i>
+        Get New User
+      </button>
+    </div>
+`;
+
 // Random User API URL
 var url = 'http://api.randomuser.me';
 
