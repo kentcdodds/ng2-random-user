@@ -1,6 +1,25 @@
 // This is just stuff to copy/paste during the presentation
 // because nobody wants to watch someone type out data...
 
+var userCardTemplate = `
+    <div class="user-card">
+      <div class="user-avatar-container">
+        <img src="fred.png" alt="User Avatar"/>
+      </div>
+      <div class="user-properties">
+        <div>
+          <strong>Name:</strong> Fred Mertz
+        </div>
+        <div>
+          <strong>Username:</strong> TheFredMertz
+        </div>
+        <div>
+          <strong>Email:</strong> freddie@aol.com
+        </div>
+      </div>
+    </div>
+  `;
+
 var fred = {
   name: {
     first: 'Fred',
