@@ -10,7 +10,7 @@ System.register("RandomUser", [], function($__export) {
           ;
         };
         return ($traceurRuntime.createClass)(RandomUser, {getUser: function() {
-            var url = 'http://api.randomuser.me';
+            var url = 'https://api.randomuser.me';
             return axios.get(url).then((function(response) {
               return response.data.results[0].user;
             }));
